@@ -4,7 +4,7 @@ const DB = require("../bbdd/db")
 
 function searchAllArticles() {
     return new Promise((resolve, reject) => {
-        DB.query(`SELECT * FROM articulos;`, (err, result) => {
+        DB.query(`SELECT id, nombre, precio, relevancia FROM articulos;`, (err, result) => {
             if (err)
                 return reject(err);
             resolve(result);
